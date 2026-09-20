@@ -1,0 +1,56 @@
+{
+  "profile": {
+    "firstName": "AFB",
+    "heroTitle": "Building bright ideas for the web.",
+    "heroDescription": "I’m a curious developer who turns thoughtful code into useful little corners of the internet.",
+    "photo": "/public/profile.jpeg",
+    "photoAlt": "Portrait of Fakhrul smiling outdoors",
+    "aboutTitle": "Hi, I’m Fakhrul — a developer with a soft spot for hard problems.",
+    "aboutText": "I like building products that feel obvious in the best way: quick, clear, and a little delightful. When I’m away from the keyboard, I’m probably collecting book recommendations or getting overly competitive at board games.",
+    "currently": "Making useful web things, one playful pixel at a time.",
+    "contactBlurb": "Have a project, a question, or a very good internet joke? My inbox is open.",
+    "email": "ahmadfakrhulbawani2@gmail.com"
+  },
+  "techStack": [
+    "C",
+    "C++",
+    "Python",
+    "Java",
+    "C#",
+    "Go",
+    "NextJS",
+    "ReactJs",
+    "Gin Gonic",
+    "ExpressJs"
+  ],
+  "projects": [
+    {
+      "title": "Himasakta ITS Official Website",
+      "description": "A website built for Himasakta ITS using NextJS, Go Gin, Postgres, Cloudflare",
+      "image": "/public/himasakta-its.png",
+      "imageAlt": "Himasakta ITS dotcom",
+      "github": "https://github.com/HIMASAKTA-DEV",
+      "demo": "https://himasakta-its.com"
+    },
+    {
+      "title": "2D Platformer Game Gwejh",
+      "description": "A tiny 2D platformer game built with construct 3 and exported as web app game",
+      "image": "/public/game-platform-gweh.png",
+      "imageAlt": "2D Platformer Game Gwejh",
+      "github": "https://github.com/ahmadfakhrulbawani2-arch/GIGAJAM_Game-Platform-Gweh",
+      "demo": "https://helpful-cascaron-0d931e.netlify.app/"
+    },
+    {
+      "title": "Wowo Ideas Experimental",
+      "description": "A simple ethereum smart contract built with Hardhat Solidity and deployed on SepoliaETH Testnet",
+      "image": "/public/wowo-ideas-experimental.png",
+      "imageAlt": "My Wowo Ideas Experimental",
+      "github": "https://github.com/ahmadfakhrulbawani2-arch/Wowo-Ideas-Smart-Contract-Experimental",
+      "demo": "https://example.com"
+    }
+  ],
+  "social": {
+    "github": "https://github.com/ahmadfakhrulbawani2-arch",
+    "linkedin": "https://www.linkedin.com/in/ahmad-fakhrul-bawani/"
+  }
+}

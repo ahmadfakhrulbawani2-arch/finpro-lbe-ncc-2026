@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Milo's developer portfolio" />
+    <title>Ahmad Fakhrul Bawani — Developer Portfolio</title>
+    <link rel="icon" type="image/png" href="./public/logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- only dev server -->
+    <script>
+      const socket = new WebSocket(`ws://${location.host}/__reload`);
+
+      socket.addEventListener('message', (event) => {
+        if (event.data === 'reload') {
+          location.reload();
+        }
+      });
+    </script>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
