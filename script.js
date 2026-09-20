@@ -1,5 +1,17 @@
 import PortfolioData from './db/main.json' with { type: 'json' };
 
+// lenis
+// Initialize Lenis
+const lenis = new Lenis({
+  autoRaf: true,
+  duration: 1.2,
+  smoothWheel: true,
+  smoothTouch: false,
+  wheelMultiplier: 1,
+  touchMultiplier: 1,
+  easing: (t) => 1 - Math.pow(1 - t, 3),
+});
+
 const icon = (name, size = 20) => {
   const paths = {
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',

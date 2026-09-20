@@ -13,6 +13,20 @@
 html {
   scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink);
+  border: 3px solid var(--paper);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--coral);
+}
 body {
   margin: 0;
   background: var(--paper);
