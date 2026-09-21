@@ -41,7 +41,9 @@ function h(tag, props = {}, ...children) {
   }
   for (const child of children.flat()) {
     if (child === null || child === undefined || child === false) continue;
-    node.append(child.nodeType ? child : document.createTextNode(String(child)));
+    node.append(
+      child.nodeType ? child : document.createTextNode(String(child))
+    );
   }
   return node;
 }
@@ -57,13 +59,17 @@ function link(label, url, className = 'link') {
       rel: external ? 'noopener noreferrer' : null,
     },
     label,
-    external ? h('span', { class: 'sr-only', text: ' (opens in a new tab)' }) : null
+    external
+      ? h('span', { class: 'sr-only', text: ' (opens in a new tab)' })
+      : null
   );
 }
 
 function tagList(tags) {
   if (!Array.isArray(tags) || tags.length === 0) return null;
-  return h('ul', { class: 'tags', 'aria-label': 'Technologies' },
+  return h(
+    'ul',
+    { class: 'tags', 'aria-label': 'Technologies' },
     tags.map((tag) => h('li', { class: 'tag', text: tag }))
   );
 }
@@ -90,7 +96,9 @@ async function loadData() {
     throw err;
   }
   if (!response.ok) {
-    const err = new Error(DATA_URL + ' responded with status ' + response.status);
+    const err = new Error(
+      DATA_URL + ' responded with status ' + response.status
+    );
     err.kind = 'fetch';
     throw err;
   }
@@ -107,13 +115,31 @@ async function loadData() {
 function renderError(main, err) {
   const isParse = err.kind === 'parse';
   main.replaceChildren(
-    h('div', { class: 'wrap load-error' },
-      h('h1', { text: isParse ? 'data.json has a syntax error' : "Couldn't load data.json" }),
+    h(
+      'div',
+      { class: 'wrap load-error' },
+      h('h1', {
+        text: isParse
+          ? 'data.json has a syntax error'
+          : "Couldn't load data.json",
+      }),
       isParse
-        ? h('p', { text: err.message + '. Common causes are a trailing comma, a missing quote, or a double quote inside text that is not escaped as \\".' })
-        : h('p', { text: 'If you opened index.html straight from your files, the browser blocks reading data.json. Serve the folder instead by running this in it:' }),
-      isParse ? null : h('pre', {}, h('code', { text: 'python3 -m http.server 8000' })),
-      isParse ? null : h('p', { text: 'Then open http://localhost:8000. Hosting the folder on GitHub Pages, Netlify or Vercel also fixes this.' })
+        ? h('p', {
+            text:
+              err.message +
+              '. Common causes are a trailing comma, a missing quote, or a double quote inside text that is not escaped as \\".',
+          })
+        : h('p', {
+            text: 'If you opened index.html straight from your files, the browser blocks reading data.json. Serve the folder instead by running this in it:',
+          }),
+      isParse
+        ? null
+        : h('pre', {}, h('code', { text: 'python3 -m http.server 8000' })),
+      isParse
+        ? null
+        : h('p', {
+            text: 'Then open http://localhost:8000. Hosting the folder on GitHub Pages, Netlify or Vercel also fixes this.',
+          })
     )
   );
 }
@@ -126,7 +152,9 @@ function applySite(site, profile) {
   if (site.title) document.title = site.title;
 
   if (site.description) {
-    document.querySelector('meta[name="description"]')?.setAttribute('content', site.description);
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute('content', site.description);
   }
 
   if (site.accentColor) {
@@ -149,9 +177,13 @@ function setFavicon(name, accent) {
 
   const svg =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">' +
-    '<rect width="64" height="64" rx="12" fill="' + accent + '"/>' +
+    '<rect width="64" height="64" rx="12" fill="' +
+    accent +
+    '"/>' +
     '<text x="32" y="43" text-anchor="middle" font-family="Arial, sans-serif" ' +
-    'font-weight="700" font-size="30" fill="#fff">' + initials + '</text></svg>';
+    'font-weight="700" font-size="30" fill="#fff">' +
+    initials +
+    '</text></svg>';
 
   const icon = document.querySelector('link[rel="icon"]');
   if (icon) icon.href = 'data:image/svg+xml,' + encodeURIComponent(svg);
@@ -168,13 +200,20 @@ function buildThemeToggle() {
   const sync = () => {
     const dark = root.dataset.theme === 'dark';
     button.textContent = dark ? 'Light' : 'Dark';
-    button.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    button.setAttribute(
+      'aria-label',
+      dark ? 'Switch to light theme' : 'Switch to dark theme'
+    );
   };
 
   button.addEventListener('click', () => {
     const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
     root.dataset.theme = next;
-    try { localStorage.setItem('theme', next); } catch (e) { /* storage unavailable */ }
+    try {
+      localStorage.setItem('theme', next);
+    } catch (e) {
+      /* storage unavailable */
+    }
     sync();
   });
 
@@ -185,11 +224,19 @@ function buildThemeToggle() {
 function buildNav(name, sections) {
   const nav = document.getElementById('site-nav');
   nav.replaceChildren(
-    h('div', { class: 'wrap nav-inner' },
+    h(
+      'div',
+      { class: 'wrap nav-inner' },
       h('a', { class: 'nav-brand', href: '#top', text: name }),
-      h('nav', { class: 'nav-links-wrap', 'aria-label': 'Sections' },
-        h('ul', { class: 'nav-links' },
-          sections.map((s) => h('li', {}, h('a', { href: '#' + s.id, text: s.heading })))
+      h(
+        'nav',
+        { class: 'nav-links-wrap', 'aria-label': 'Sections' },
+        h(
+          'ul',
+          { class: 'nav-links' },
+          sections.map((s) =>
+            h('li', {}, h('a', { href: '#' + s.id, text: s.heading }))
+          )
         )
       ),
       buildThemeToggle()
@@ -231,27 +278,52 @@ function buildHero(profile) {
   const name = profile.name || 'Your Name';
 
   const title = h('h1', { class: 'hero-name' });
-  name.split(/\s+/).filter(Boolean).forEach((word, i, words) => {
-    title.append(h('span', { class: 'hero-word', text: word }));
-    if (i < words.length - 1) title.append(' ');
-  });
+  name
+    .split(/\s+/)
+    .filter(Boolean)
+    .forEach((word, i, words) => {
+      title.append(h('span', { class: 'hero-word', text: word }));
+      if (i < words.length - 1) title.append(' ');
+    });
 
-  const socials = (profile.socials || []).map((s) => h('li', {}, link(s.label, s.url)));
+  const socials = (profile.socials || []).map((s) =>
+    h('li', {}, link(s.label, s.url))
+  );
   if (profile.resumeUrl) {
-    socials.push(h('li', {}, link(profile.resumeLabel || 'Résumé', profile.resumeUrl)));
+    socials.push(
+      h('li', {}, link(profile.resumeLabel || 'Résumé', profile.resumeUrl))
+    );
   }
 
-  const hero = h('section', { class: 'hero', id: 'top', 'aria-label': 'Introduction' },
-    h('div', { class: 'wrap' },
+  const hero = h(
+    'section',
+    { class: 'hero', id: 'top', 'aria-label': 'Introduction' },
+    h(
+      'div',
+      { class: 'wrap' },
       title,
-      h('div', { class: 'hero-meta' },
-        h('div', {},
-          profile.role ? h('p', { class: 'hero-role', text: profile.role }) : null,
-          profile.tagline ? h('p', { class: 'hero-tagline', text: profile.tagline }) : null
+      h(
+        'div',
+        { class: 'hero-meta' },
+        h(
+          'div',
+          {},
+          profile.role
+            ? h('p', { class: 'hero-role', text: profile.role })
+            : null,
+          profile.tagline
+            ? h('p', { class: 'hero-tagline', text: profile.tagline })
+            : null
         ),
-        h('div', { class: 'hero-aside' },
-          profile.location ? h('p', { class: 'hero-location', text: profile.location }) : null,
-          profile.availability ? h('p', { class: 'hero-availability', text: profile.availability }) : null,
+        h(
+          'div',
+          { class: 'hero-aside' },
+          profile.location
+            ? h('p', { class: 'hero-location', text: profile.location })
+            : null,
+          profile.availability
+            ? h('p', { class: 'hero-availability', text: profile.availability })
+            : null,
           socials.length ? h('ul', { class: 'hero-links' }, socials) : null
         )
       )
@@ -266,7 +338,11 @@ function animateName(area, target) {
   const REST = { wght: 700, wdth: 100 };
   const apply = (s) => {
     target.style.fontVariationSettings =
-      '"wght" ' + s.wght.toFixed(0) + ', "wdth" ' + s.wdth.toFixed(1) + ', "opsz" 96';
+      '"wght" ' +
+      s.wght.toFixed(0) +
+      ', "wdth" ' +
+      s.wdth.toFixed(1) +
+      ', "opsz" 96';
   };
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -284,7 +360,9 @@ function animateName(area, target) {
     current.wdth += (goal.wdth - current.wdth) * 0.08;
     apply(current);
 
-    const settled = Math.abs(goal.wght - current.wght) < 0.5 && Math.abs(goal.wdth - current.wdth) < 0.05;
+    const settled =
+      Math.abs(goal.wght - current.wght) < 0.5 &&
+      Math.abs(goal.wdth - current.wdth) < 0.05;
     if (settled) {
       current = { ...goal };
       apply(current);
@@ -293,7 +371,9 @@ function animateName(area, target) {
     }
     frame = requestAnimationFrame(tick);
   };
-  const run = () => { if (frame === null) frame = requestAnimationFrame(tick); };
+  const run = () => {
+    if (frame === null) frame = requestAnimationFrame(tick);
+  };
 
   area.addEventListener('pointermove', (event) => {
     const box = area.getBoundingClientRect();
@@ -321,8 +401,12 @@ function animateName(area, target) {
    -------------------------------------------------------------------------- */
 
 function sectionShell(id, heading, body) {
-  return h('section', { class: 'section', id, 'aria-labelledby': id + '-title' },
-    h('div', { class: 'wrap section-grid' },
+  return h(
+    'section',
+    { class: 'section', id, 'aria-labelledby': id + '-title' },
+    h(
+      'div',
+      { class: 'wrap section-grid' },
       h('h2', { class: 'section-title', id: id + '-title', text: heading }),
       h('div', { class: 'section-body' }, body)
     )
@@ -333,23 +417,44 @@ function buildAbout(data) {
   const paragraphs = data.paragraphs || [];
   if (!paragraphs.length) return null;
 
-  return h('div', { class: data.photo ? 'about has-photo' : 'about' },
-    h('div', { class: 'prose' }, paragraphs.map((text) => h('p', { text }))),
+  return h(
+    'div',
+    { class: data.photo ? 'about has-photo' : 'about' },
+    h(
+      'div',
+      { class: 'prose' },
+      paragraphs.map((text) => h('p', { text }))
+    ),
     data.photo
-      ? h('img', { class: 'about-photo', src: data.photo, alt: data.photoAlt || '', loading: 'lazy' })
+      ? h('img', {
+          class: 'about-photo',
+          src: data.photo,
+          alt: data.photoAlt || '',
+          loading: 'lazy',
+        })
       : null
   );
 }
 
 function entry({ dates, title, org, orgUrl, summary, highlights, tags }) {
-  return h('article', { class: 'entry' },
+  return h(
+    'article',
+    { class: 'entry' },
     h('p', { class: 'entry-dates', text: dates }),
-    h('div', {},
+    h(
+      'div',
+      {},
       h('h3', { class: 'entry-title', text: title }),
-      org ? h('p', { class: 'entry-org' }, orgUrl ? link(org, orgUrl) : org) : null,
+      org
+        ? h('p', { class: 'entry-org' }, orgUrl ? link(org, orgUrl) : org)
+        : null,
       summary ? h('p', { class: 'entry-summary', text: summary }) : null,
       highlights && highlights.length
-        ? h('ul', { class: 'entry-list' }, highlights.map((text) => h('li', { text })))
+        ? h(
+            'ul',
+            { class: 'entry-list' },
+            highlights.map((text) => h('li', { text }))
+          )
         : null,
       tagList(tags)
     )
@@ -360,7 +465,9 @@ function buildExperience(data) {
   const items = data.items || [];
   if (!items.length) return null;
 
-  return h('div', { class: 'entries' },
+  return h(
+    'div',
+    { class: 'entries' },
     items.map((job) =>
       entry({
         dates: dateRange(job.start, job.end),
@@ -379,7 +486,9 @@ function buildEducation(data) {
   const items = data.items || [];
   if (!items.length) return null;
 
-  return h('div', { class: 'entries' },
+  return h(
+    'div',
+    { class: 'entries' },
     items.map((item) =>
       entry({
         dates: dateRange(item.start, item.end),
@@ -396,20 +505,37 @@ function buildProjects(data) {
   const items = data.items || [];
   if (!items.length) return null;
 
-  return h('div', { class: 'projects' },
+  return h(
+    'div',
+    { class: 'projects' },
     items.map((project) =>
-      h('article', { class: 'project' },
+      h(
+        'article',
+        { class: 'project' },
         project.image
-          ? h('img', { class: 'project-image', src: project.image, alt: project.imageAlt || '', loading: 'lazy' })
+          ? h('img', {
+              class: 'project-image',
+              src: project.image,
+              alt: project.imageAlt || '',
+              loading: 'lazy',
+            })
           : null,
-        h('div', { class: 'project-head' },
+        h(
+          'div',
+          { class: 'project-head' },
           h('h3', { class: 'project-title', text: project.title }),
-          project.year ? h('span', { class: 'project-year', text: project.year }) : null
+          project.year
+            ? h('span', { class: 'project-year', text: project.year })
+            : null
         ),
-        project.description ? h('p', { class: 'project-desc', text: project.description }) : null,
+        project.description
+          ? h('p', { class: 'project-desc', text: project.description })
+          : null,
         tagList(project.tags),
         project.links && project.links.length
-          ? h('ul', { class: 'project-links' },
+          ? h(
+              'ul',
+              { class: 'project-links' },
               project.links.map((l) => h('li', {}, link(l.label, l.url)))
             )
           : null
@@ -422,11 +548,19 @@ function buildSkills(data) {
   const groups = data.groups || [];
   if (!groups.length) return null;
 
-  return h('div', { class: 'skills' },
+  return h(
+    'div',
+    { class: 'skills' },
     groups.map((g) =>
-      h('div', { class: 'skill-group' },
+      h(
+        'div',
+        { class: 'skill-group' },
         h('h3', { class: 'skill-group-title', text: g.group }),
-        h('ul', { class: 'skill-list' }, (g.items || []).map((item) => h('li', { text: item })))
+        h(
+          'ul',
+          { class: 'skill-list' },
+          (g.items || []).map((item) => h('li', { text: item }))
+        )
       )
     )
   );
@@ -435,16 +569,31 @@ function buildSkills(data) {
 function buildContact(data) {
   if (!data.email) return null;
 
-  const copyButton = h('button', { class: 'button', type: 'button', 'aria-live': 'polite', text: 'Copy email' });
+  const copyButton = h('button', {
+    class: 'button',
+    type: 'button',
+    'aria-live': 'polite',
+    text: 'Copy email',
+  });
   copyButton.addEventListener('click', async () => {
     const ok = await copyText(data.email);
     copyButton.textContent = ok ? 'Copied' : 'Copy failed';
-    setTimeout(() => { copyButton.textContent = 'Copy email'; }, 2000);
+    setTimeout(() => {
+      copyButton.textContent = 'Copy email';
+    }, 2000);
   });
 
-  return h('div', { class: 'contact' },
-    data.message ? h('p', { class: 'contact-message', text: data.message }) : null,
-    h('a', { class: 'contact-email', href: 'mailto:' + data.email, text: data.email }),
+  return h(
+    'div',
+    { class: 'contact' },
+    data.message
+      ? h('p', { class: 'contact-message', text: data.message })
+      : null,
+    h('a', {
+      class: 'contact-email',
+      href: 'mailto:' + data.email,
+      text: data.email,
+    }),
     h('div', { class: 'contact-actions' }, copyButton)
   );
 }
@@ -453,14 +602,23 @@ async function copyText(text) {
   try {
     await navigator.clipboard.writeText(text);
     return true;
-  } catch (e) { /* fall through to the legacy method */ }
+  } catch (e) {
+    /* fall through to the legacy method */
+  }
 
-  const box = h('textarea', { readonly: true, style: 'position:fixed;opacity:0' });
+  const box = h('textarea', {
+    readonly: true,
+    style: 'position:fixed;opacity:0',
+  });
   box.value = text;
   document.body.append(box);
   box.select();
   let ok = false;
-  try { ok = document.execCommand('copy'); } catch (e) { /* ignore */ }
+  try {
+    ok = document.execCommand('copy');
+  } catch (e) {
+    /* ignore */
+  }
   box.remove();
   return ok;
 }
@@ -472,8 +630,12 @@ async function copyText(text) {
 function buildFooter(site, profile) {
   const footer = document.getElementById('site-footer');
   footer.replaceChildren(
-    h('div', { class: 'wrap footer-inner' },
-      h('p', { text: '© ' + new Date().getFullYear() + ' ' + (profile.name || '') }),
+    h(
+      'div',
+      { class: 'wrap footer-inner' },
+      h('p', {
+        text: '© ' + new Date().getFullYear() + ' ' + (profile.name || ''),
+      }),
       site.footer ? h('p', { text: site.footer }) : null
     )
   );
@@ -499,9 +661,10 @@ async function init() {
   const profile = data.profile || {};
   applySite(site, profile);
 
-  const order = Array.isArray(site.sections) && site.sections.length
-    ? site.sections
-    : Object.keys(BUILDERS);
+  const order =
+    Array.isArray(site.sections) && site.sections.length
+      ? site.sections
+      : Object.keys(BUILDERS);
 
   const sections = [];
   for (const id of order) {
