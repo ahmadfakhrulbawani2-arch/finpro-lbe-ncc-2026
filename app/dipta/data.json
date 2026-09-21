@@ -1,0 +1,123 @@
+{
+  "site": {
+    "title": "Putu Pradipta Ananda | Informatics Engineering Student",
+    "description": "Portfolio of Putu Pradipta Ananda, an Informatics Engineering Student.",
+    "accentColor": "#3B3BFF",
+    "sections": ["about", "projects", "skills", "education", "contact"],
+    "footer": "Vibe coded for an docker assignment."
+  },
+
+  "profile": {
+    "name": "Putu Pradipta Ananda",
+    "role": "Informatics Engineering Student",
+    "tagline": "I build things for my own convenience.",
+    "location": "Surabaya, Indonesia",
+    "availability": "Too much assignments, but I can still take on small projects.",
+    "resumeUrl": "",
+    "resumeLabel": "Download résumé",
+    "socials": [
+      { "label": "GitHub", "url": "https://github.com/putupradiptaananda" },
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/putu-pradipta-ananda-8b1453378/" }
+    ]
+  },
+
+  "about": {
+    "heading": "About",
+    "photo": "",
+    "photoAlt": "Portrait of Putu Pradipta Ananda",
+    "paragraphs": [
+      "I'm an informatics engineering student that wasn't really interested in the field before. I have only started making something by myself this year, and it's weirdly enjoyable. I am inherently lazy in a unusual way, so I tend to build things that make my life easier. I currently only have experience with CLIs, but I am learning web development right now.",
+      "Outside of school, I am still an indoor person, though I don't usually turn down invitations. I consume a lot of media, mostly video games. Drawing is the hobby I tell people when asked what my hobbies are. I quite enjoy hiking."
+    ]
+  },
+
+  "experience": {
+    "heading": "Experience",
+    "items": [
+      {
+        "role": "Senior engineer",
+        "company": "Northwind Labs",
+        "url": "https://example.com",
+        "start": "2022",
+        "end": "Present",
+        "summary": "Own the customer dashboard used by 40,000 logistics teams, from API design through to the interface.",
+        "highlights": [
+          "Rebuilt the dashboard in TypeScript and cut initial load time from 6.2s to 1.9s.",
+          "Set up a shared component library now used by five product teams.",
+          "Mentor three engineers and run the weekly code review session."
+        ],
+        "tags": ["TypeScript", "React", "Node.js", "PostgreSQL"]
+      },
+      {
+        "role": "Software engineer",
+        "company": "Brightside Health",
+        "url": "",
+        "start": "2019",
+        "end": "2022",
+        "summary": "Built patient-facing scheduling and messaging features for a telehealth platform.",
+        "highlights": [
+          "Shipped appointment reminders that reduced no-shows by 18%.",
+          "Led the move of messaging out of a Rails monolith into its own service."
+        ],
+        "tags": ["Ruby on Rails", "Vue", "AWS"]
+      }
+    ]
+  },
+
+  "projects": {
+    "heading": "Projects",
+    "items": [
+      {
+        "title": "PIVNote",
+        "year": "2026",
+        "description": "CLI that calculates IV estimations for a Pokemon with an option to save them.",
+        "image": "",
+        "imageAlt": "Screenshot of Tidepool showing a week of habits",
+        "tags": ["C/C++"],
+        "links": [
+          { "label": "Source code", "url": "https://github.com/putupradiptaananda/PIVNote" }
+        ]
+      },
+      {
+        "title": "Personal Website",
+        "year": "2026",
+        "description": "A project turned to assignment, which is why it is very raw. Still in development, of course.",
+        "image": "",
+        "imageAlt": "",
+        "tags": ["HTML"],
+        "links": [
+          { "label": "Live site", "url": "https://putupradiptaananda.github.io/" },
+          { "label": "Source code", "url": "https://github.com/putupradiptaananda/putupradiptaananda.github.io" }
+        ]
+      }
+    ]
+  },
+
+  "skills": {
+    "heading": "Skills",
+    "groups": [
+      { "group": "Languages", "items": ["C/C++"] },
+      { "group": "Tooling", "items": ["Git"] }
+    ]
+  },
+
+  "education": {
+    "heading": "Education",
+    "items": [
+      {
+        "degree": "Informatic Engineering",
+        "school": "Institute Technology of Sepuluh Nopember",
+        "url": "",
+        "start": "2025",
+        "end": "Present",
+        "note": ""
+      }
+    ]
+  },
+
+  "contact": {
+    "heading": "Contact",
+    "message": "",
+    "email": "putupradiptaananda@gmail.com"
+  }
+}

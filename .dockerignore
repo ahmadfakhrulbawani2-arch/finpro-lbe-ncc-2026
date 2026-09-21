@@ -1,1 +1,9 @@
-server.js
+.env.example
+.gitignore
+Dockerfile
+.prettierrc
+LICENSE
+README
+.vscode/
+.env
+.git/
