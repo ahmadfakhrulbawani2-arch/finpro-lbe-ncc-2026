@@ -295,4 +295,5 @@ Langkah pembuatan:
 
 9. Bukti:
 
-Video demo: [disini](./docs/2026-09-22%2009-27-59.mp4)
+Video demo: [disini](./docs/2026-09-22%2009-27-59.mp4) <br />
+Sayangnya untuk for loop curl tidak dapat dilakukan karena kami hanya mengalokasikan 1vCPU tiap VM sehingga tidak mampu menghandle request tersebut ditambah lagi kami mendeploy di region India sehingga selalu membuat time out request curl. Dokumentasi lain disimpan [disini](./docs/)
