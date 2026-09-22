@@ -1,5 +1,9 @@
 # ncc-team-09-lbe-final
 
+> ![WARNING]
+>
+> A presentation readme is [here](./PRESENTATION.md)
+
 A final project for my LBE NCC 2026 Assignment. The final project is about making portfolio website then deployed to Microsoft Azuere Resource Group with Docker and Load Balancer.
 
 ![screenshot](./docs/localhost_3000_%20wide.png)
