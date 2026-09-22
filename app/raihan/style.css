@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header {
+    background-color: skyblue;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    background-color: #ffffff;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-text {
+    font-family: 'Bebas Neue', 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+}
+
+.fa-circle-user {
+    font-size: 24px;
+    color: #1a1a1a;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none; 
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #888888;
+}
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    width: 100%;
+    padding: 40px;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5rem;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.content-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding:40px;
+  border-top: 1px solid #eaeaea;
+}
+
+.content-section h2 {
+  font-family: 'Bebas Neue', 'Times New Roman', Times, serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.content-section ul {
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-left: 25px;
+  color: #333;
+}
+
+.email-link {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #6a0dad;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
