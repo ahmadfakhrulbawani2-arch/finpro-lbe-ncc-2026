@@ -1,6 +1,6 @@
 # ncc-team-09-lbe-final
 
-> [!Info]
+> [!Note]
 >
 > A presentation readme is [here](./PRESENTATION.md)
 
