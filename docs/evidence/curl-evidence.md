@@ -1,0 +1,537 @@
+# Curl Evidence
+
+```ps1
+[09.52.41] --- Request ke-1 dimulai ---
+
+
+Waktu        : 09.52.41
+Request      : 1
+Status       : 200
+Server       : nginx/1.31.6
+CustomHeader :
+Content      : <!doctype html>
+               <html lang="id">
+                 <head>
+                   <meta charset="UTF-8" />
+                   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                   <meta name="description" content="Website portofolio sederhana" />
+                   <title>Portfolio | Hamiz Afandi</title>
+
+                   <link rel="preconnect" href="https://fonts.googleapis.com" />
+                   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                   <link
+                     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+                     rel="stylesheet"
+                   />
+
+                   <link rel="stylesheet" href="css/style.css" />
+                 </head>
+                 <body>
+                   <header class="site-header">
+                     <div class="container navbar">
+                       <a href="#about" class="brand">HA.</a>
+
+                       <nav aria-label="Navigasi utama">
+                         <ul class="nav-links">
+                           <li><a href="#about">About</a></li>
+                           <li><a href="#education">Pendidikan</a></li>
+                           <li><a href="#projects">Proyek</a></li>
+                           <li><a href="#socials">Socials</a></li>
+                         </ul>
+                       </nav>
+                     </div>
+                   </header>
+
+                   <main>
+                     <section id="about" class="section intro-section">
+                       <div class="container intro">
+                         <p class="eyebrow">PORTFOLIO</p>
+
+                         <div class="intro-content">
+                           <div>
+                             <h1>Halo, saya <span>Hamizan Rifqi Afandi.</span></h1>
+                             <p class="intro-text">
+                               Mahasiswa Teknik Informatika yang tertarik pada pengembangan
+                               web, software engineering, AI, dan teknologi. Saya suka membuat
+                               proyek sederhana yang berguna sekaligus terus belajar hal-hal
+                               baru.
+                             </p>
+                           </div>
+
+                           <div class="quick-info card">
+                             <p class="card-label">Saat ini</p>
+                             <h2>S1 Teknik Informatika</h2>
+                             <p>Institut Teknologi Sepuluh Nopember</p>
+                             <p>Surabaya, Indonesia</p>
+                           </div>
+                         </div>
+                       </div>
+                     </section>
+
+                     <section id="education" class="section">
+                       <div class="container">
+                         <div class="section-heading">
+                           <p class="eyebrow">BACKGROUND</p>
+                           <h2>Pendidikan & Skillset</h2>
+                         </div>
+
+                         <div class="two-column">
+                           <article class="card education-card">
+                             <p class="card-label">Pendidikan</p>
+                             <h3>Institut Teknologi Sepuluh Nopember</h3>
+                             <p class="muted">S1 Teknik Informatika</p>
+                             <p>
+                               Mempelajari dasar-dasar pemrograman, struktur data, pengembangan
+                               perangkat lunak, jaringan komputer, basis data, dan kecerdasan
+                               artifisial.
+                             </p>
+                           </article>
+
+                           <article class="card">
+                             <p class="card-label">Skillset</p>
+                             <div class="skill-list">
+                               <span class="skill">HTML</span>
+                               <span class="skill">CSS</span>
+                               <span class="skill">JavaScript</span>
+                               <span class="skill">Python</span>
+                               <span class="skill">Java</span>
+                               <span class="skill">Git</span>
+                               <span class="skill">PostgreSQL</span>
+                               <span class="skill">Docker</span>
+                               <span class="skill"></span>
+                             </div>
+                           </article>
+                         </div>
+                       </div>
+                     </section>
+
+                     <section id="projects" class="section">
+                       <div class="container">
+                         <div class="section-heading">
+                           <p class="eyebrow">SELECTED WORK</p>
+                           <h2>Proyek</h2>
+                         </div>
+
+                         <div class="project-list">
+                           <article class="project-card card">
+                             <div class="project-number">01</div>
+                             <div class="project-content">
+                               <h3>PortfolioCMS</h3>
+                               <p>
+                                 PortfolioCMS adalah sistem manajemen konten (CMS) portofolio
+                                 akademis dan profesional yang dihosting sendiri, yang
+                                 terinspirasi oleh desain informasi yang sederhana dan
+                                 minimalis dari Academic Pages.
+                               </p>
+                               <div class="project-tags">
+                                 <span>Docker</span>
+                                 <span>Drizzle ORM</span>
+                                 <span>Next.js</span>
+                                 <span>Node.js</span>
+                                 <span>PostgreSQL</span>
+                                 <span>Tailwind CSS</span>
+                                 <span>Typescript</span>
+                               </div>
+                               <a
+                                 class="project-link"
+                                 href="https://github.com/HmizR/portfolio-cms"
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 aria-label="Lihat proyek PortfolioCMS di GitHub"
+                                 >Lihat proyek <span aria-hidden="true">&nearr;</span></a
+                               >
+                             </div>
+                           </article>
+
+                           <article class="project-card card">
+                             <div class="project-number">02</div>
+                             <div class="project-content">
+                               <h3>Questora</h3>
+                               <p>
+                                 Questora adalah Sistem Manajemen Pembelajaran (LMS) berbasis
+                                 gamifikasi dengan konsep MVP yang menyajikan kelas sebagai
+                                 dunia pembelajaran, modul sebagai wilayah, aktivitas sebagai
+                                 misi, dan penyelesaian misi sebagai kemajuan yang didorong
+                                 oleh XP.
+                               </p>
+                               <div class="project-tags">
+                                 <span>Next.js</span>
+                                 <span>Node.js</span>
+                                 <span>PostgreSQL</span>
+                                 <span>Prisma ORM</span>
+                                 <span>Tailwind CSS</span>
+                                 <span>Typescript</span>
+                               </div>
+                               <a
+                                 class="project-link"
+                                 href="https://github.com/HmizR/Questora"
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 aria-label="Lihat proyek Questora di GitHub"
+                                 >Lihat proyek <span aria-hidden="true">&nearr;</span></a
+                               >
+                             </div>
+                           </article>
+                         </div>
+                       </div>
+                     </section>
+
+                     <section id="socials" class="section">
+                       <div class="container">
+                         <div class="social-box">
+                           <div>
+                             <p class="eyebrow">GET IN TOUCH</p>
+                             <h2>Temukan saya di internet.</h2>
+                             <p class="muted">
+                               Beberapa tempat untuk melihat proyek atau menghubungi saya.
+                             </p>
+                           </div>
+
+                           <div class="social-links">
+                             <a
+                               href="https://github.com/HmizR"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               >GitHub</a
+                             >
+                             <a
+                               href="https://www.linkedin.com/in/hamizan-rifqi-afandi/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               >LinkedIn</a
+                             >
+                             <a href="mailto:hamizanrifqi.afandi@gmail.com">Email</a>
+                           </div>
+                         </div>
+                       </div>
+                     </section>
+                   </main>
+
+                   <footer class="site-footer">
+                     <div class="container footer-content">
+                       <p>&copy; 2026 Hamizan Rifqi Afandi.</p>
+                       <a href="#about">Kembali ke atas â</a>
+                     </div>
+                   </footer>
+                 </body>
+               </html>
+
+Menunggu 5 menit sebelum request berikutnya...
+[09.57.41] --- Request ke-2 dimulai ---
+Waktu        : 09.57.41
+Request      : 2
+Status       : 200
+Server       : nginx/1.31.6
+CustomHeader :
+Content      : <!doctype html>
+               <html lang="en">
+                 <head>
+                   <meta charset="utf-8" />
+                   <meta name="viewport" content="width=device-width, initial-scale=1" />
+                   <title>Portfolio</title>
+                   <meta name="description" content="" />
+                   <meta name="color-scheme" content="light dark" />
+
+                   <link rel="preconnect" href="https://fonts.googleapis.com" />
+                   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                   <link
+                     rel="stylesheet"
+                     href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,2
+               00..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap"
+                   />
+                   <link rel="icon" href="data:," />
+                   <link rel="stylesheet" href="style.css" />
+
+                   <!-- Apply the saved (or system) theme before first paint to avoid a flash -->
+                   <script>
+                     (function () {
+                       var theme;
+                       try {
+                         theme = localStorage.getItem('theme');
+                       } catch (e) {}
+                       if (theme !== 'light' && theme !== 'dark') {
+                         theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+                           ? 'dark'
+                           : 'light';
+                       }
+                       document.documentElement.dataset.theme = theme;
+                     })();
+                   </script>
+                 </head>
+                 <body>
+                   <a class="skip-link" href="#main">Skip to content</a>
+
+                   <!-- Filled in by script.js from data.json -->
+                   <header class="nav" id="site-nav" hidden></header>
+
+                   <main id="main">
+                     <p class="wrap loading">Loadingâ¦</p>
+                   </main>
+
+                   <footer class="footer" id="site-footer" hidden></footer>
+
+                   <noscript>
+                     <p class="wrap loading">
+                       This portfolio needs JavaScript to load its content.
+                     </p>
+                   </noscript>
+
+                   <script src="script.js" defer></script>
+                 </body>
+               </html>
+
+Menunggu 5 menit sebelum request berikutnya...
+[10.02.41] --- Request ke-3 dimulai ---
+Waktu        : 10.02.41
+Request      : 3
+Status       : 200
+Server       : nginx/1.31.6
+CustomHeader :
+Content      : <!doctype html>
+               <html lang="id">
+                 <head>
+                   <meta charset="UTF-8" />
+                   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                   <meta name="description" content="Website portofolio sederhana" />
+                   <title>Portfolio | Hamiz Afandi</title>
+
+                   <link rel="preconnect" href="https://fonts.googleapis.com" />
+                   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                   <link
+                     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+                     rel="stylesheet"
+                   />
+
+                   <link rel="stylesheet" href="css/style.css" />
+                 </head>
+                 <body>
+                   <header class="site-header">
+                     <div class="container navbar">
+                       <a href="#about" class="brand">HA.</a>
+
+                       <nav aria-label="Navigasi utama">
+                         <ul class="nav-links">
+                           <li><a href="#about">About</a></li>
+                           <li><a href="#education">Pendidikan</a></li>
+                           <li><a href="#projects">Proyek</a></li>
+                           <li><a href="#socials">Socials</a></li>
+                         </ul>
+                       </nav>
+                     </div>
+                   </header>
+
+                   <main>
+                     <section id="about" class="section intro-section">
+                       <div class="container intro">
+                         <p class="eyebrow">PORTFOLIO</p>
+
+                         <div class="intro-content">
+                           <div>
+                             <h1>Halo, saya <span>Hamizan Rifqi Afandi.</span></h1>
+                             <p class="intro-text">
+                               Mahasiswa Teknik Informatika yang tertarik pada pengembangan
+                               web, software engineering, AI, dan teknologi. Saya suka membuat
+                               proyek sederhana yang berguna sekaligus terus belajar hal-hal
+                               baru.
+                             </p>
+                           </div>
+
+                           <div class="quick-info card">
+                             <p class="card-label">Saat ini</p>
+                             <h2>S1 Teknik Informatika</h2>
+                             <p>Institut Teknologi Sepuluh Nopember</p>
+                             <p>Surabaya, Indonesia</p>
+                           </div>
+                         </div>
+                       </div>
+                     </section>
+
+                     <section id="education" class="section">
+                       <div class="container">
+                         <div class="section-heading">
+                           <p class="eyebrow">BACKGROUND</p>
+                           <h2>Pendidikan & Skillset</h2>
+                         </div>
+
+                         <div class="two-column">
+                           <article class="card education-card">
+                             <p class="card-label">Pendidikan</p>
+                             <h3>Institut Teknologi Sepuluh Nopember</h3>
+                             <p class="muted">S1 Teknik Informatika</p>
+                             <p>
+                               Mempelajari dasar-dasar pemrograman, struktur data, pengembangan
+                               perangkat lunak, jaringan komputer, basis data, dan kecerdasan
+                               artifisial.
+                             </p>
+                           </article>
+
+                           <article class="card">
+                             <p class="card-label">Skillset</p>
+                             <div class="skill-list">
+                               <span class="skill">HTML</span>
+                               <span class="skill">CSS</span>
+                               <span class="skill">JavaScript</span>
+                               <span class="skill">Python</span>
+                               <span class="skill">Java</span>
+                               <span class="skill">Git</span>
+                               <span class="skill">PostgreSQL</span>
+                               <span class="skill">Docker</span>
+                               <span class="skill"></span>
+                             </div>
+                           </article>
+                         </div>
+                       </div>
+                     </section>
+
+                     <section id="projects" class="section">
+                       <div class="container">
+                         <div class="section-heading">
+                           <p class="eyebrow">SELECTED WORK</p>
+                           <h2>Proyek</h2>
+                         </div>
+
+                         <div class="project-list">
+                           <article class="project-card card">
+                             <div class="project-number">01</div>
+                             <div class="project-content">
+                               <h3>PortfolioCMS</h3>
+                               <p>
+                                 PortfolioCMS adalah sistem manajemen konten (CMS) portofolio
+                                 akademis dan profesional yang dihosting sendiri, yang
+                                 terinspirasi oleh desain informasi yang sederhana dan
+                                 minimalis dari Academic Pages.
+                               </p>
+                               <div class="project-tags">
+                                 <span>Docker</span>
+                                 <span>Drizzle ORM</span>
+                                 <span>Next.js</span>
+                                 <span>Node.js</span>
+                                 <span>PostgreSQL</span>
+                                 <span>Tailwind CSS</span>
+                                 <span>Typescript</span>
+                               </div>
+                               <a
+                                 class="project-link"
+                                 href="https://github.com/HmizR/portfolio-cms"
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 aria-label="Lihat proyek PortfolioCMS di GitHub"
+                                 >Lihat proyek <span aria-hidden="true">&nearr;</span></a
+                               >
+                             </div>
+                           </article>
+
+                           <article class="project-card card">
+                             <div class="project-number">02</div>
+                             <div class="project-content">
+                               <h3>Questora</h3>
+                               <p>
+                                 Questora adalah Sistem Manajemen Pembelajaran (LMS) berbasis
+                                 gamifikasi dengan konsep MVP yang menyajikan kelas sebagai
+                                 dunia pembelajaran, modul sebagai wilayah, aktivitas sebagai
+                                 misi, dan penyelesaian misi sebagai kemajuan yang didorong
+                                 oleh XP.
+                               </p>
+                               <div class="project-tags">
+                                 <span>Next.js</span>
+                                 <span>Node.js</span>
+                                 <span>PostgreSQL</span>
+                                 <span>Prisma ORM</span>
+                                 <span>Tailwind CSS</span>
+                                 <span>Typescript</span>
+                               </div>
+                               <a
+                                 class="project-link"
+                                 href="https://github.com/HmizR/Questora"
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 aria-label="Lihat proyek Questora di GitHub"
+                                 >Lihat proyek <span aria-hidden="true">&nearr;</span></a
+                               >
+                             </div>
+                           </article>
+                         </div>
+                       </div>
+                     </section>
+
+                     <section id="socials" class="section">
+                       <div class="container">
+                         <div class="social-box">
+                           <div>
+                             <p class="eyebrow">GET IN TOUCH</p>
+                             <h2>Temukan saya di internet.</h2>
+                             <p class="muted">
+                               Beberapa tempat untuk melihat proyek atau menghubungi saya.
+                             </p>
+                           </div>
+
+                           <div class="social-links">
+                             <a
+                               href="https://github.com/HmizR"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               >GitHub</a
+                             >
+                             <a
+                               href="https://www.linkedin.com/in/hamizan-rifqi-afandi/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               >LinkedIn</a
+                             >
+                             <a href="mailto:hamizanrifqi.afandi@gmail.com">Email</a>
+                           </div>
+                         </div>
+                       </div>
+                     </section>
+                   </main>
+
+                   <footer class="site-footer">
+                     <div class="container footer-content">
+                       <p>&copy; 2026 Hamizan Rifqi Afandi.</p>
+                       <a href="#about">Kembali ke atas â</a>
+                     </div>
+                   </footer>
+                 </body>
+               </html>
+
+Menunggu 5 menit sebelum request berikutnya...
+[10.07.41] --- Request ke-4 dimulai ---
+Waktu        : 10.07.41
+Request      : 4
+Status       : 200
+Server       : nginx/1.31.6
+CustomHeader :
+Content      : <!doctype html>
+               <html lang="en">
+                 <head>
+                   <meta charset="UTF-8" />
+                   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                   <meta name="description" content="Milo's developer portfolio" />
+                   <title>Ahmad Fakhrul Bawani â Developer Portfolio</title>
+                   <link rel="icon" type="image/png" href="./public/logo.svg" />
+                   <link rel="stylesheet" href="style.css" />
+
+                   <!-- libs -->
+                   <!-- lenis: https://github.com/darkroomengineering/lenis/blob/main/README.md -->
+                   <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+                   <link
+                     rel="stylesheet"
+                     href="https://unpkg.com/lenis@1.3.26/dist/lenis.css"
+                   />
+                 </head>
+                 <body>
+                   <div id="root"></div>
+                   <!-- only dev server -->
+                   <!-- <script>
+                     const socket = new WebSocket(`ws://${location.host}/__reload`);
+
+                     socket.addEventListener('message', (event) => {
+                       if (event.data === 'reload') {
+                         location.reload();
+                       }
+                     });
+                   </script> -->
+                   <script src="script.js" type="module"></script>
+                 </body>
+               </html>
+```

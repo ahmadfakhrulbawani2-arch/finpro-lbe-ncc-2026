@@ -185,7 +185,7 @@ http {
 
 Cloud menggunakan Azure dengan load balancer yang diatur untuk melakukan load balancing resource ke 4 virtual machine seperti ini:
 
-![topology](./docs/Screenshot%20from%202026-09-22%2008-30-02.png)
+![topology](./docs/vm-healthy.png)
 
 Langkah pembuatan:
 
